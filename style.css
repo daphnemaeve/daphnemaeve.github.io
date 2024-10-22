@@ -1,0 +1,243 @@
+/* Josh Comeau's CSS Reset
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+  
+  /* My custom CSS */
+  
+  /* custom fonts */
+  
+  @font-face {
+    font-family: "Poetsen";
+    src: url('fonts/PoetsenOne-Regular.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Work Sans';
+    src: url('fonts/WorkSans[wght].ttf') format('truetype');
+    font-weight: 1 999;
+    font-stretch: 1% 100%;
+  }
+  
+  @font-face {
+    font-family: 'Work Sans';
+    src: url('fonts/WorkSans-Italic[wght].ttf') format('truetype');
+    font-weight: 1 999;
+    font-stretch: 1% 100%;
+    font-style: italic;
+  }
+  
+  /* CSS vars used below */
+  
+  /* CSS classes */
+  
+  .title * {
+    font-family: "Poetsen";
+    color: #8380B6;
+    text-decoration: none;
+  }
+  
+  .topnav {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .topnav h3 {
+    flex: 0;
+    text-decoration: none;
+    padding: 1px 0px;
+    margin: 10px 0;
+  }
+  
+  .topnav > h3 > a {
+    text-decoration: none;
+    color: #8380B6;
+  }
+  
+  .topnav > h3 > a:hover {
+    display: inline-block;
+    transform: rotate(.1rad);
+    text-shadow: 3px 3px 2px lightgrey;
+  }
+  /*
+  .center {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  */
+  
+  .footer {
+    font-size: 10pt;
+  }
+  
+  .sitemap {
+    line-height: 1;
+  }
+  
+  .footnotes {
+    margin-top: 1.5rem;
+  }
+  
+  /* standard html element style */
+  
+  body {
+    font-family: "Work Sans";
+    background-color: #ffffff;
+    color: #111D4A;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    text-align: justify;
+    margin: auto;
+    max-width: clamp(0px, 60vw, 60em);
+    font-size: clamp(16px, 1vw, 20px);
+  }
+  
+  h1 {
+    font-family: "Poetsen";
+    text-align: left;
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+  
+  h2 {
+    font-family: "Work Sans";
+    text-align: left;
+    margin-bottom: 0px;
+    margin-top: 25px
+  }
+  
+  h3 {
+    font-family: "Work Sans";
+    font-style: italic;
+    margin-bottom: 0px;
+    margin-top: 30px;
+    text-decoration: underline;
+  }
+  
+  p, ul, ol { 
+    font-family: "Work Sans"; 
+    margin: 10px 0px;
+  }
+  
+  li {
+    text-align: start;
+  }
+  
+  a {
+      color: #8380B6;
+  }
+  
+  img, video {
+      width: calc(40vw);
+      height: auto;    /* Maintain image aspect ratio */
+      display: block;  /* Remove default bottom margin */
+      margin: 0 auto;  /* Center images within their container */
+      border: 2px solid #000; /* Add a light border around images */
+      border-radius: 10px;    /* Add rounded corners to images */
+      padding: 4px;
+  }
+  
+  code {
+    display: inline-block;
+    font-family: Courier, monospace; /* Fixed-width font */
+    background-color: #f5f5f5; /* Subtle background color */
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 1px 1px; /* Padding for spacing */
+    border-radius: 2px; /* Slight border radius for rounded corners */
+    font-size: 90%;
+  }
+  
+  hr {
+    color: #111D4A;
+    width: 100%;
+  }
+  
+  /* for special semantic classes */
+  
+  .sidenote {
+      background-color: #f0f0f0; /* Light gray background */
+      border: 1px solid #ccc; /* Light gray border */
+      padding: 30px; /* Add some padding for spacing */
+      margin: 30px 0; /* Margin for separation from other content */
+      color: #555; /* Dark gray text color */
+  }
+  
+  .published-slug {
+    color: #777;
+    font-style: italic;
+  }
+  
+  .footer-container {
+    margin-top: 30px; /* give us a little space at the end of pages. */
+    margin-bottom: 30px; /* give us a little space at the end of pages. */
+  }
+  
+  /* Media queries for smaller screen-sizes */
+  
+  @media screen and (max-width: 62rem) {
+    body {
+      max-width: 90%;
+      font-size: 1rem;
+      text-align: left;
+    }
+    .topnav > h3 > a {
+      flex-direction: column;
+      flex: 1;
+      font-size: 1rem;
+      line-height: 0;
+    }
+    .topnav * {
+      line-height: 0;
+      margin-bottom: 10px;
+    }
+  }
+  
+  
