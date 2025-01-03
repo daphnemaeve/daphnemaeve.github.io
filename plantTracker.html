@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="alternate" type="application/atom+xml" title="daphne maeve hoffer" href="https://daphnemaeve.github.io">
+
+    <!-- magic favicon stuff -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Health Tracker</title>
+</head>
+<body>
+    <div id="main-page">
+        <div class="header">
+            <h1>Plant Health Tracker</h1>
+        </div>
+
+        <div class="plant-form">
+            <h2>Add New Plant</h2>
+            <form id="addPlantForm">
+                <div class="form-group">
+                    <label for="plantName">Plant Name:</label>
+                    <input type="text" id="plantName" required>
+                </div>
+                <div class="form-group">
+                    <label for="plantType">Plant Type:</label>
+                    <input type="text" id="plantType" required>
+                </div>
+                <div class="form-group">
+                    <label for="wateringFrequency">Watering Frequency (days):</label>
+                    <input type="number" id="wateringFrequency" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastWatered">Last Watered:</label>
+                    <input type="date" id="lastWatered" required>
+                </div>
+                <div class="form-group">
+                    <label for="healthStatus">Health Status:</label>
+                    <select id="healthStatus" required>
+                        <option value="healthy">Healthy</option>
+                        <option value="needs-attention">Needs Attention</option>
+                        <option value="critical">Critical</option>
+                    </select>
+                </div>
+                <button type="submit">Add Plant</button>
+            </form>
+        </div>
+
+        <div id="plantsList" class="plants-list">
+            <!-- Plants will be added here dynamically -->
+        </div>
+    </div>
+
+    <div id="details-page" style="display: none;">
+        <div class="header">
+            <button id="back-button" class="back-button">← Back to Plants</button>
+            <h1 id="plant-detail-name"></h1>
+        </div>
+
+        <div class="plant-details">
+            <div class="plant-image-section">
+                <img id="plant-image" src="/api/placeholder/400/300" alt="Plant image" class="plant-detail-image">
+                <div class="image-upload-form">
+                    <input type="file" id="imageInput" accept="image/*">
+                    <label for="imageInput" class="upload-button">Upload New Image</label>
+                </div>
+            </div>
+
+            <div class="plant-info-section">
+                <div class="info-group">
+                    <label>Plant Type:</label>
+                    <p id="detail-type"></p>
+                </div>
+                <div class="info-group">
+                    <label>Watering Frequency:</label>
+                    <p id="detail-watering"></p>
+                </div>
+                <div class="info-group">
+                    <label>Last Watered:</label>
+                    <p id="detail-last-watered"></p>
+                </div>
+                <div class="info-group">
+                    <label>Health Status:</label>
+                    <p id="detail-health"></p>
+                </div>
+                
+                <div class="health-notes-section">
+                    <h3>Health Notes</h3>
+                    <textarea 
+                        id="health-notes" 
+                        rows="4" 
+                        placeholder="Enter notes about your plant's health..."
+                    ></textarea>
+                    <div class="notes-actions">
+                        <button 
+                            id="save-notes-button" 
+                            class="save-notes-button" 
+                            disabled
+                        >Save Notes</button>
+                        <span id="save-confirmation" class="save-confirmation hide">Notes saved!</span>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="water-button" class="water-button">Water Plant</button>
+                    <button id="delete-button" class="delete-button">Delete Plant</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="plantTracker.js"></script>
+</body>
+</html>
