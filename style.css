@@ -3,7 +3,7 @@
 /* General styles */
 body {
   font-family: "Work Sans";
-  background-color: #ffffff;
+  background-color: #ebebeb;
   color: #111D4A;
   width: auto;
   display: flex;
@@ -14,15 +14,29 @@ body {
   margin: auto;
   max-width: clamp(0px, 60vw, 60em);
   font-size: clamp(16px, 1vw, 20px);
+  line-height: 1.6;
+}
+
+p {
+  margin-bottom: 1.2em;
+}
+
+a:hover {
+  color: #605faa
+}
+
+a {
+  text-decoration: none;
 }
 
 /* Typography */
 h1 {
   font-family: "Poetsen";
   text-align: left;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   margin-top: 30px;
   color: #8380B6;
+  font-size: 50px;
 }
 
 h2 {
@@ -30,6 +44,7 @@ h2 {
   text-align: left;
   margin-bottom: 0px;
   margin-top: 25px;
+  font-size: 35px;
 }
 
 h3 {
@@ -37,7 +52,8 @@ h3 {
   font-style: italic;
   margin-bottom: 0px;
   margin-top: 30px;
-  text-decoration: underline;
+  text-decoration: none;
+  font-size: 25px;
 }
 
 /* Plant Tracker Specific Styles */
@@ -233,6 +249,7 @@ input[type="file"] {
       max-width: 90%;
       font-size: 1rem;
       text-align: left;
+      line-height: 1.6;
   }
   
   .plant-details {
