@@ -6,14 +6,10 @@ body {
   background-color: #ebebeb;
   color: #111D4A;
   width: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: left;
   text-align: justify;
   margin: auto;
-  max-width: clamp(0px, 60vw, 60em);
-  font-size: clamp(16px, 1vw, 20px);
+  max-width: 80%;
+  font-size: medium;
   line-height: 1.6;
 }
 
@@ -22,19 +18,31 @@ p {
 }
 
 a:hover {
-  color: #605faa
+  color: #8380B6;
 }
 
 a {
   text-decoration: none;
 }
 
+.main-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+}
+
 /* Typography */
 h1 {
   font-family: "Poetsen";
   text-align: left;
-  margin-bottom: 0px;
-  margin-top: 30px;
   color: #8380B6;
   font-size: 50px;
 }
@@ -42,7 +50,6 @@ h1 {
 h2 {
   font-family: "Work Sans";
   text-align: left;
-  margin-bottom: 0px;
   margin-top: 25px;
   font-size: 35px;
 }
@@ -50,10 +57,10 @@ h2 {
 h3 {
   font-family: "Work Sans";
   font-style: italic;
-  margin-bottom: 0px;
-  margin-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 25px; 
 }
 
 /* Plant Tracker Specific Styles */
