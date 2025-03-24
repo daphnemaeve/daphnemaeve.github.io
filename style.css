@@ -21,8 +21,9 @@ a:hover {
   color: #8380B6;
 }
 
-a {
+a:link {
   text-decoration: none;
+  color: #8380B6;
 }
 
 .main-header {
@@ -30,6 +31,8 @@ a {
   flex-direction: row;
   justify-content: space-between;
   align-items:center;
+  border-bottom-style: groove;
+  border-color: #8380B6;
 }
 
 .nav {
